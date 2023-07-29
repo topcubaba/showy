@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kartal/kartal.dart';
 import 'package:showy/utils/consts.dart';
 import 'package:showy/view/widgets/submit_button.dart';
-import 'package:showy/view/widgets/custom_text_field.dart';
+import 'package:showy/view/widgets/login_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,6 +14,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,18 +34,22 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(
             fontWeight: FontWeight.w900,
             color: AppColors.white,
-            fontSize: 48,
+            fontSize: 36,
           ),
         ),
-        const Text(
-          AppStrings.LoginDescription,
-          style: TextStyle(
-            fontWeight: FontWeight.normal,
-            color: AppColors.white,
-            fontSize: 16,
+        Padding(
+          padding: context.padding.onlyBottomMedium,
+          child: const Text(
+            AppStrings.LoginDescription,
+            style: TextStyle(
+              fontWeight: FontWeight.normal,
+              color: AppColors.white,
+              fontSize: 16,
+            ),
           ),
         ),
-        CustomTextField(label: "E-Mail*"),
+        LoginTextField(label: "E-mail*", hintText: "Please enter your e-mail", controller: emailController, isEmail: true, isPassword: false,),
+        LoginTextField(label: "Password", hintText: "Please enter your password", controller: passwordController, isPassword: true,),
         const Spacer(),
         Padding(
           padding: context.padding.verticalMedium,
@@ -55,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
 Widget buildContainerPaddingAndHeight(BuildContext context) {
   return Container(
     padding: context.padding.verticalMedium,
-    height: context.sized.dynamicHeight(0.35),
+    height: context.sized.dynamicHeight(0.30),
     child: SvgPicture.asset('assets/undraw_working.svg'),
   );
 }

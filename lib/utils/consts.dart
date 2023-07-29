@@ -8,6 +8,8 @@ class AppColors {
 }
 
 class AppStrings {
-  static const String AppName = "Showy";
+  static const String AppName = "SHOWY";
   static const String LoginDescription = "Welcome! Please login to access";
+  static const String EmailError = "Please enter valid email address";
+  static const String PasswordError = "Please enter password correctly";
 }
