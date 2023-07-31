@@ -1,8 +1,6 @@
-import 'package:get/get.dart';
 import 'package:kartal/kartal.dart';
 import 'package:flutter/material.dart';
 import '../../utils/consts.dart';
-import 'package:get/get.dart';
 
 class ConfirmButton extends StatelessWidget {
   final String title;

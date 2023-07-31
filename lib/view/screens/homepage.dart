@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:kartal/kartal.dart';
 import 'package:showy/view/screens/todo.dart';
@@ -41,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: context.padding.onlyLeftLow,
                 child: const Text(
-                  AppStrings.AppName,
+                  AppStrings.appName,
                   style: TextStyle(
                       color: AppColors.greenish,
                       fontWeight: FontWeight.w900,
@@ -67,9 +66,9 @@ class _MyHomePageState extends State<MyHomePage> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.people), label: AppStrings.Users),
+              icon: Icon(Icons.people), label: AppStrings.users),
           BottomNavigationBarItem(
-              icon: Icon(Icons.task), label: AppStrings.Todo)
+              icon: Icon(Icons.task), label: AppStrings.todo)
         ],
       ),
     );

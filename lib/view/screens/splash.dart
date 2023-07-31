@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     secureStorage.readSecureData("isLogged").then((value) {
       isLogged = value;
     });
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 2), () {
       if (isLogged == "false") {
         Get.off(() => const LoginScreen());
       } else {
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
         backgroundColor: AppColors.backgroundColor,
         body: Container(
           child: Center(
-            child: Text(AppStrings.AppName,
+            child: Text(AppStrings.appName,
                 style: TextStyle(
                     color: AppColors.white,
                     fontSize: 64,

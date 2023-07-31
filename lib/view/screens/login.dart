@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:kartal/kartal.dart';
 import 'package:showy/utils/consts.dart';
 import 'package:showy/view/widgets/confirm_button.dart';
@@ -34,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Column(children: [
         buildContainerPaddingAndHeight(context),
         const Text(
-          AppStrings.AppName,
+          AppStrings.appName,
           style: TextStyle(
             fontWeight: FontWeight.w900,
             color: AppColors.white,
@@ -44,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Padding(
           padding: context.padding.onlyBottomMedium,
           child: const Text(
-            AppStrings.LoginDescription,
+            AppStrings.loginDesc,
             style: TextStyle(
               fontWeight: FontWeight.normal,
               color: AppColors.white,

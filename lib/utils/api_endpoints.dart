@@ -5,5 +5,5 @@ class ApiEndpoints {
 
 class _AuthEndpoints {
   final String loginEmail = 'login';
-  final String userList = 'users?page=2';
+  final String userList = 'users?page=1';
 }

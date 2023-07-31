@@ -25,61 +25,60 @@ class LoginTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        Padding(
+          padding: context.padding.verticalLow,
           child: Padding(
-            padding: context.padding.verticalLow,
-            child: Padding(
-              padding: context.padding.horizontalMedium,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Padding(
-                        padding: context.padding.onlyLeftLow,
-                        child: Text(
-                          label,
-                          style: TextStyle(color: AppColors.white),
-                        ),
+            padding: context.padding.horizontalMedium,
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Padding(
+                      padding: context.padding.onlyLeftLow,
+                      child: Text(
+                        label,
+                        style: const TextStyle(color: AppColors.white),
                       ),
-                      Spacer(),
-                    ],
-                  ),
-                  TextFormField(
-                    style: TextStyle(color: AppColors.white, fontSize: 14),
-                    obscureText: isPassword! ? true: false,
-                    controller: controller,
-                    cursorColor: AppColors.white,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) {
-                      if (isEmail == true) {
-                        if (GetUtils.isEmail(value!)) {
-                          return null;
-                        }
-                        else {
-                          return AppStrings.EmailError;
-                        }
-                      }
-                    },
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: AppColors.greyish,
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: context.border.highBorderRadius,
-                        borderSide: const BorderSide(color: AppColors.white),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: context.border.highBorderRadius,
-                        borderSide: const BorderSide(color: AppColors.white),
-                      ),
-                      hintText: hintText,
-                      hintStyle:
-                          TextStyle(color: AppColors.white, fontSize: 14),
-                      labelStyle:
-                          const TextStyle(color: AppColors.white, fontSize: 14),
                     ),
+                    Spacer(),
+                  ],
+                ),
+                TextFormField(
+                  style: const TextStyle(color: AppColors.white, fontSize: 14),
+                  obscureText: isPassword ? true: false,
+                  controller: controller,
+                  cursorColor: AppColors.white,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (isEmail == true) {
+                      if (GetUtils.isEmail(value!)) {
+                        return null;
+                      }
+                      else {
+                        return AppStrings.emailError;
+                      }
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: AppColors.greyish,
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: context.border.highBorderRadius,
+                      borderSide: const BorderSide(color: AppColors.white),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: context.border.highBorderRadius,
+                      borderSide: const BorderSide(color: AppColors.white),
+                    ),
+                    hintText: hintText,
+                    hintStyle:
+                        const TextStyle(color: AppColors.white, fontSize: 14),
+                    labelStyle:
+                        const TextStyle(color: AppColors.white, fontSize: 14),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
