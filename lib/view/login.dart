@@ -22,8 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   LoginController loginController = Get.put(LoginController());
 
-  var isLogin = false.obs;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:showy/main.dart';
 import 'package:flutter/material.dart';
@@ -6,13 +7,22 @@ import 'package:get/get.dart';
 import 'package:showy/main.dart';
 import 'package:showy/utils/api_endpoints.dart';
 import 'package:http/http.dart' as http;
-import 'package:showy/services/storage.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:showy/services/storage.dart';
+
+import '../view/homepage.dart';
 
 class LoginController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final _storage = const FlutterSecureStorage();
+  final SecureStorage secureStorage = SecureStorage();
+
+  Future<void> getIsLoggedIn() async {
+    final String? loggedinfo = await _storage.read(key: "isLogged");
+    //print(loggedinfo);
+
+  }
 
   Future<void> login() async {
     var headers = {'Content-Type': 'application/json'};
@@ -29,12 +39,11 @@ class LoginController extends GetxController {
 
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
-        await _storage.write(
-            key: "isLogged", value: "true");
+        secureStorage.writeSecureData("isLogged", "true");
 
         emailController.clear();
         passwordController.clear();
-        Get.off(() => MyHomePage(title: "HomePageTest"));
+        Get.off(() => MyHomePage(title: "login successfull"));
       } else {
         throw jsonDecode(response.body)["Message"] ?? "Unknown Error Occured";
       }
