@@ -7,9 +7,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:showy/services/storage.dart';
 import 'package:showy/utils/consts.dart';
-import 'package:showy/view/homepage.dart';
-import 'package:showy/view/login.dart';
-import 'package:showy/view/splash.dart';
+import 'package:showy/view/screens/splash.dart';
 import 'controllers/login_controller.dart';
 
 Future<void> main() async {

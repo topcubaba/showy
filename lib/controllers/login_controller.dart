@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:showy/services/storage.dart';
 
-import '../view/homepage.dart';
+import '../view/screens/homepage.dart';
 
 class LoginController extends GetxController {
   final TextEditingController emailController = TextEditingController();
@@ -43,7 +43,7 @@ class LoginController extends GetxController {
 
         emailController.clear();
         passwordController.clear();
-        Get.off(() => MyHomePage(title: "login successfull"));
+        Get.off(() => MyHomePage());
       } else {
         throw jsonDecode(response.body)["Message"] ?? "Unknown Error Occured";
       }

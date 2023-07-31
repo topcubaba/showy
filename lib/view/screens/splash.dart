@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:showy/utils/consts.dart';
-import 'package:showy/view/homepage.dart';
-import 'package:showy/view/login.dart';
 
-import '../services/storage.dart';
+import '../../services/storage.dart';
+import 'homepage.dart';
+import 'login.dart';
 
 String? isLogged;
 
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (isLogged == "false") {
         Get.off(() => const LoginScreen());
       } else {
-        Get.off(() => const MyHomePage(title: "logged in!"));
+        Get.off(() => const MyHomePage());
       }
     });
     super.initState();
