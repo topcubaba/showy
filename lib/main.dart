@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:showy/utils/consts.dart';
 import 'package:showy/view/login.dart';
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -55,6 +57,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  final _storage = const FlutterSecureStorage();
+
+
+  Future<void> _readFromStorage() async {
+    var email = await _storage.read(key: "isLogged") ?? 'empty';
+    print(email);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _readFromStorage();
+  }
 
   void _incrementCounter() {
     setState(() {

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:kartal/kartal.dart';
 import 'package:showy/utils/consts.dart';
-import 'package:showy/view/widgets/submit_button.dart';
+import 'package:showy/view/widgets/confirm_button.dart';
 import 'package:showy/view/widgets/login_text_field.dart';
+import 'package:showy/controllers/login_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,9 +17,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  LoginController loginController = Get.put(LoginController());
+
+  var isLogin = false.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +54,27 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-        LoginTextField(label: "E-mail*", hintText: "Please enter your e-mail", controller: emailController, isEmail: true, isPassword: false,),
-        LoginTextField(label: "Password", hintText: "Please enter your password", controller: passwordController, isPassword: true,),
+        LoginTextField(
+          label: "E-mail*",
+          hintText: "Please enter your e-mail",
+          controller: loginController.emailController,
+          isEmail: true,
+          isPassword: false,
+        ),
+        LoginTextField(
+          label: "Password",
+          hintText: "Please enter your password",
+          controller: loginController.passwordController,
+          isPassword: true,
+        ),
         const Spacer(),
         Padding(
           padding: context.padding.verticalMedium,
-          child: const SubmitButton(title: "Login"),
+          child: ConfirmButton(
+            title: "Login",
+            onPressed: () => loginController.login(),
+            isDisabled: false,
+          ),
         )
       ]),
     );
