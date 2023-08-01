@@ -76,6 +76,11 @@ class AddTodo extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox( height: context.sized.dynamicHeight(0.05),
+                    child: const VerticalDivider(
+                  color: AppColors.white,
+                  thickness: 2,
+                )),
                 GestureDetector(
                   onTap: () {
                     todoController.todos.add(

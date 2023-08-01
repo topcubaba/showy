@@ -16,7 +16,7 @@ class AppStrings {
   static const String error = "Error!";
   static const String addTodo = "Add to-do";
   static const String writeTodo = "Write your note";
-  static const String add = "Add";
+  static const String add = "Accept";
   static const String cancel = "Cancel";
 
   //Bottom Navigaton Bar Titles
