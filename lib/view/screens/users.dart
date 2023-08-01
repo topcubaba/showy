@@ -7,24 +7,23 @@ import 'package:http/http.dart' as http;
 import '../../utils/api_endpoints.dart';
 import '../../utils/consts.dart';
 
-class Users extends StatefulWidget {
-  const Users({super.key});
+class UsersScreen extends StatefulWidget {
+  const UsersScreen({super.key});
 
   @override
-  _UsersState createState() => _UsersState();
+  _UsersScreenState createState() => _UsersScreenState();
 }
 
 Map? responseMap;
 List? responseList;
 
-class _UsersState extends State<Users> {
+class _UsersScreenState extends State<UsersScreen> {
   Future getUsers() async {
     http.Response response;
     response = await http.get(
         Uri.parse(ApiEndpoints.baseUrl + ApiEndpoints.authEndpoints.userList));
     if (response.statusCode == 200) {
       setState(() {
-        //responseBody = response.body;
         responseMap = json.decode(response.body);
         responseList = responseMap?['data'];
       });

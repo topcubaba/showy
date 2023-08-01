@@ -4,15 +4,15 @@ import 'package:showy/utils/consts.dart';
 import 'package:get/get_utils/get_utils.dart';
 
 class LoginTextField extends StatelessWidget {
-  const LoginTextField(
-      {Key? key,
-      this.controller,
-      required this.hintText,
-      required this.label,
-      this.onTap,
-      required this.isPassword,
-      this.isEmail})
-      : super(key: key);
+  const LoginTextField({
+    Key? key,
+    this.controller,
+    required this.hintText,
+    required this.label,
+    this.onTap,
+    required this.isPassword,
+    this.isEmail,
+  }) : super(key: key);
 
   final TextEditingController? controller;
   final String hintText;
@@ -40,12 +40,12 @@ class LoginTextField extends StatelessWidget {
                         style: const TextStyle(color: AppColors.white),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
                 TextFormField(
                   style: const TextStyle(color: AppColors.white, fontSize: 14),
-                  obscureText: isPassword ? true: false,
+                  obscureText: isPassword ? true : false,
                   controller: controller,
                   cursorColor: AppColors.white,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -53,8 +53,7 @@ class LoginTextField extends StatelessWidget {
                     if (isEmail == true) {
                       if (GetUtils.isEmail(value!)) {
                         return null;
-                      }
-                      else {
+                      } else {
                         return AppStrings.emailError;
                       }
                     }

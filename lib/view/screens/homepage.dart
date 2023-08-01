@@ -24,14 +24,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   final List<Widget> _children = [
-    const Users(),
-    const Todo(),
+    const UsersScreen(),
+    TodoScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: AppColors.greyish,
           elevation: 0,
           title: Row(

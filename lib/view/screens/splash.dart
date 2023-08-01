@@ -11,6 +11,8 @@ import 'login.dart';
 String? isLogged;
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -22,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     secureStorage.readSecureData("isLogged").then((value) {
       isLogged = value;
     });
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () {
       if (isLogged == "false") {
         Get.off(() => const LoginScreen());
       } else {
@@ -41,14 +43,12 @@ class _SplashScreenState extends State<SplashScreen> {
           toolbarHeight: 0,
         ),
         backgroundColor: AppColors.backgroundColor,
-        body: Container(
-          child: Center(
-            child: Text(AppStrings.appName,
-                style: TextStyle(
-                    color: AppColors.white,
-                    fontSize: 64,
-                    fontWeight: FontWeight.w800)),
-          ),
+        body: const Center(
+          child: Text(AppStrings.appName,
+              style: TextStyle(
+                  color: AppColors.greenish,
+                  fontSize: 64,
+                  fontWeight: FontWeight.w800)),
         ));
   }
 }

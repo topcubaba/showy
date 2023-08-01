@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:kartal/kartal.dart';
@@ -52,15 +51,15 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
         LoginTextField(
-          label: "E-mail*",
-          hintText: "Please enter your e-mail",
+          label: AppStrings.email,
+          hintText: AppStrings.emailHint,
           controller: loginController.emailController,
           isEmail: true,
           isPassword: false,
         ),
         LoginTextField(
-          label: "Password",
-          hintText: "Please enter your password",
+          label: AppStrings.password,
+          hintText: AppStrings.passwordHint,
           controller: loginController.passwordController,
           isPassword: true,
         ),
@@ -68,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Padding(
           padding: context.padding.verticalMedium,
           child: ConfirmButton(
-            title: "Login",
+            title: AppStrings.login,
             onPressed: () => loginController.login(),
             isDisabled: false,
           ),

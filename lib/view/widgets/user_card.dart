@@ -43,14 +43,14 @@ class UserCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "First Name: $firstName",
+                       AppStrings.firstName + firstName,
                       style: TextStyle(
                         color: AppColors.white,
                         fontSize: context.sized.normalValue,
                       ),
                     ),
                     Text(
-                      "Last Name: $lastName",
+                      AppStrings.lastName + lastName,
                       style: TextStyle(
                         color: AppColors.white,
                         fontSize: context.sized.normalValue,

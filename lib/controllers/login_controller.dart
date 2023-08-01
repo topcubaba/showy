@@ -6,6 +6,7 @@ import 'package:showy/utils/api_endpoints.dart';
 import 'package:http/http.dart' as http;
 import 'package:showy/services/storage.dart';
 
+import '../utils/consts.dart';
 import '../view/screens/homepage.dart';
 
 class LoginController extends GetxController {
@@ -32,19 +33,12 @@ class LoginController extends GetxController {
         passwordController.clear();
         Get.off(() => const MyHomePage());
       } else {
-        throw jsonDecode(response.body)["Message"] ?? "Unknown Error Occured";
+        throw jsonDecode(response.body)["Message"] ?? AppStrings.loginError;
       }
     } catch (error) {
       Get.back();
-      showDialog(
-          context: Get.context!,
-          builder: (context) {
-            return SimpleDialog(
-              title: Text('Error'),
-              contentPadding: EdgeInsets.all(20),
-              children: [Text(error.toString())],
-            );
-          });
+      Get.snackbar(AppStrings.error, error.toString(),
+          colorText: AppColors.white);
     }
   }
 }
