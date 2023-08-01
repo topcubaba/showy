@@ -20,15 +20,14 @@ tech |
 App logs in with ReqRes API. After login, the app stays logged in until the user logs out even app is closed.  
 
 -On the first screen, there is a user list from ReqRes API.  
--On the second screen, there is a simple to-do list.  
+-On the second screen, there is a simple to-do list. 
 
 Here are the screenshots and animated GIF:
 
 Login Screen | User List Screen | To-do Screen | Add To-do Screen
 ---|---|---|----|
-<img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/03c67717-407f-48ba-ac90-cf81814cbbfd"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/3090faa7-40d9-41d4-8ad1-6b718e708dc9"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/ac5154d1-78e0-42a5-b07f-0766e157c39d"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/d22cb705-6a4c-48a8-ad3d-e79130b225d1"> |
-
+<img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/276633bd-e83c-438f-91a7-e449d1f44ff3"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/36ad7010-b3c1-4314-b6bd-24e178183b6d"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/eebef95e-b353-469d-b712-e012097a771a"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/7fc34ccc-fa67-49d3-9081-56378c0c749c"> |
 
 Animated GIF |
 ---|
-<img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/f4bb9c37-55ba-4c6e-b2d9-5426696230d4"> |
+<img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/b7b0a8ab-7e2f-4a53-ad66-c740c65e1464"> |
