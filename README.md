@@ -17,6 +17,12 @@ tech |
 [Flutter SVG](https://pub.dev/packages/flutter_svg) |
 
 ## Introduction
+App logs in with ReqRes API. After login, the app stays logged in until the user logs out even app is closed.  
+
+-On the first screen, there is a user list from ReqRes API.  
+-On the second screen, there is a simple to-do list.  
+
+Here are the screenshots and animated GIF:
 
 Login Screen | User List Screen | To-do Screen | Add To-do Screen
 ---|---|---|----|
