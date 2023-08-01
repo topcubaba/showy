@@ -7,7 +7,7 @@ import 'add_todo.dart';
 
 class TodoScreen extends StatelessWidget {
   final TodoController todoController =
-      Get.put(TodoController(), permanent: true);
+      Get.put(TodoController());
 
   TodoScreen({Key? key}) : super(key: key);
 
