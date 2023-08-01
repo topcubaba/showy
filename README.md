@@ -1,16 +1,28 @@
-# showy
+# Showy
 
-A new Flutter project.
+Simple flutter app that works with [ReqRes](https://reqres.in) fake APIs  
 
-## Getting Started
+UI built with [Uizard Pro AI Tool](https://uizard.io/)  
 
-This project is a starting point for a Flutter application.
+Login credentials:  
+Email: eve.holt@reqres.in  
+Pass: cityslicka
 
-A few resources to get you started if this is your first Flutter project:
+tech |
+---|
+[GetX](https://pub.dev/packages/get) |
+[Flutter Secure Storage](https://pub.dev/packages/flutter_secure_storage) |
+[Get Storage](https://pub.dev/packages/get_storage) |
+[Kartal](https://pub.dev/packages/kartal) |
+[Flutter SVG](https://pub.dev/packages/flutter_svg) |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Introduction
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Login Screen | User List Screen | To-do Screen | Add To-do Screen
+---|---|---|----|
+<img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/03c67717-407f-48ba-ac90-cf81814cbbfd"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/3090faa7-40d9-41d4-8ad1-6b718e708dc9"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/ac5154d1-78e0-42a5-b07f-0766e157c39d"> | <img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/d22cb705-6a4c-48a8-ad3d-e79130b225d1"> |
+
+
+Animated GIF |
+---|
+<img width="200" alt="018" src="https://github.com/topcubaba/showy/assets/50087007/f4bb9c37-55ba-4c6e-b2d9-5426696230d4"> |
