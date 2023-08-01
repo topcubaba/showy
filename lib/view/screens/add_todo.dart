@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:kartal/kartal.dart';
 import 'package:showy/models/todo_model.dart';
 import 'package:showy/controllers/todo_controller.dart';
+import 'package:showy/view/widgets/todo_button.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../utils/consts.dart';
 
@@ -15,6 +17,8 @@ class AddTodo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var uuid = const Uuid().v4();
+
     return Scaffold(
       appBar: AppBar(
           automaticallyImplyLeading: false,
@@ -62,43 +66,31 @@ class AddTodo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                GestureDetector(
-                  onTap: () {
+                TodoButton(
+                  icon: const Icon(Icons.close, color: Colors.redAccent),
+                  title: AppStrings.cancel,
+                  onPressed: () {
                     Get.back();
                   },
-                  child: const Column(
-                    children: [
-                      Icon(Icons.close, color: Colors.redAccent),
-                      Text(
-                        AppStrings.cancel,
-                        style: TextStyle(color: AppColors.white),
-                      ),
-                    ],
-                  ),
                 ),
-                SizedBox( height: context.sized.dynamicHeight(0.05),
+                SizedBox(
+                    height: context.sized.dynamicHeight(0.05),
                     child: const VerticalDivider(
-                  color: AppColors.white,
-                  thickness: 2,
-                )),
-                GestureDetector(
-                  onTap: () {
+                      color: AppColors.white,
+                      thickness: 2,
+                    )),
+                TodoButton(
+                  icon: const Icon(Icons.check, color: AppColors.greenish),
+                  title: AppStrings.add,
+                  onPressed: () {
                     todoController.todos.add(
                       Todo(
+                        uuid: uuid,
                         text: todoTEC.text,
                       ),
                     );
                     Get.back();
                   },
-                  child: const Column(
-                    children: [
-                      Icon(Icons.check, color: AppColors.greenish),
-                      Text(
-                        AppStrings.add,
-                        style: TextStyle(color: AppColors.white),
-                      ),
-                    ],
-                  ),
                 ),
               ],
             )
